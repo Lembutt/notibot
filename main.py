@@ -9,8 +9,8 @@ def getAdmins():
   admins = os.getenv('NOTIBOT_ADMINS')
   if admins:
     return admins.split(':')
-  return ['484206299']
-
+  return []
+  
 admins = getAdmins()
 token = os.getenv('NOTIBOT_TOKEN')
 bot = Bot(token=token)
