@@ -28,7 +28,7 @@ async def sendMessageToAdmins(data: dict):
       notification_text = 'Notification!'
 
       if 'service' in data:
-        notification_text += f' From: {data['service']}'
+        notification_text += f' From: {data["service"]}'
 
       notification_text += '\n'
 
