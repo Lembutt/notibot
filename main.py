@@ -22,10 +22,19 @@ async def notifyAdmins(request):
   return web.Response(status=200)
 
 
-async def sendMessageToAdmins(name, email, phone):
+async def sendMessageToAdmins(data: dict):
   for admin in admins:
     try:
-      await bot.send_message(admin, text=f'Новая заявка по квасу!\n\nИмя: {name}\nEmail: {email}\nТелефон: {phone}')
+      notification_text = 'Notification!'
+
+      if 'service' in data:
+        notification_text += f' From: {data['service']}'
+
+      notification_text += '\n'
+
+      for key, value in d.items():
+        notification_text += f'{key}: {value} \n'
+      await bot.send_message(admin, text=notification_text)
     except Exception as e:
       print(e)
 
