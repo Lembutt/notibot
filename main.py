@@ -18,7 +18,7 @@ bot = Bot(token=token)
 @routes.post('/notifyAdmins')
 async def notifyAdmins(request):
   data = await request.json()
-  await sendMessageToAdmins(data['name'], data['email'], data['phone'])
+  await sendMessageToAdmins(data)
   return web.Response(status=200)
 
 
