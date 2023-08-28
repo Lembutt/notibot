@@ -9,7 +9,7 @@ Notibot is a project that provides a convenient and efficient way to notify spec
 This variable represents list of notibot admins 
 
 ```console
-foo@bar:~$ export NOTIBOT_ADMINS=TELEGRAM_ADMIN_ID_1:TELEGRAM_ADMIN_ID_2
+export NOTIBOT_ADMINS=TELEGRAM_ADMIN_ID_1:TELEGRAM_ADMIN_ID_2
 ```
 
 ### NOTIBOT_TOKEN
@@ -17,13 +17,13 @@ foo@bar:~$ export NOTIBOT_ADMINS=TELEGRAM_ADMIN_ID_1:TELEGRAM_ADMIN_ID_2
 Token from https://t.me/BotFather
 
 ```console
-foo@bar:~$ export NOTIBOT_TOKEN=TOKEN
+export NOTIBOT_TOKEN=TOKEN
 ```
 
 ## Docker Hub
 
 ```console
-foo@bar:~$ docker push lembutt/notibot:tagname
+docker pull lembutt/notibot:tagname
 ```
 
 ## Docker Compose Example
