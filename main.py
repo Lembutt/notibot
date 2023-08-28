@@ -34,7 +34,7 @@ async def sendMessageToAdmins(data: dict):
 
       notification_text += '\n'
 
-      for key, value in d.items():
+      for key, value in data.items():
         notification_text += f'{key}: {value} \n'
       await bot.send_message(admin, text=notification_text)
     except Exception as e:
