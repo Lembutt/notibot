@@ -84,3 +84,48 @@ server {
     }
 }
 ```
+
+## Usage examples
+
+### JavaScript
+
+```js
+let o = {
+  service: 'Some Cool Service',
+  name: 'Foo',
+  email: 'bar@bar.bar',
+  phone: '1234567890',
+};
+
+fetch('/notifyAdmins', {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(o)
+});
+```
+
+### Python
+
+#### aiohttp
+
+```python
+import aiohttp
+import asyncio
+
+async def main():
+
+    object = {
+        'service': 'Some Cool Service',
+        'text': 'Some Text'
+    }
+
+    async with aiohttp.ClientSession() as session:
+        async with session.post('http://notibot/notifyAdmins', json=object) as resp:
+            print(resp.status)
+            print(await resp.text())
+
+asyncio.run(main())
+
+```
