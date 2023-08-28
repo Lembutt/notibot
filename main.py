@@ -18,6 +18,8 @@ bot = Bot(token=token)
 @routes.post('/notifyAdmins')
 async def notifyAdmins(request):
   data = await request.json()
+  print('Got Notification')
+  print(data)
   await sendMessageToAdmins(data)
   return web.Response(status=200)
 
@@ -39,6 +41,7 @@ async def sendMessageToAdmins(data: dict):
       print(e)
 
 if __name__ == '__main__':
+  print('Starting App')
   app = web.Application()
   app.add_routes(routes)
-  web.run_app(app, port=80)
+  web.run_app(app, port=80, host='0.0.0.0')
